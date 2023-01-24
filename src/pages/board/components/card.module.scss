@@ -1,0 +1,11 @@
+.card {
+  padding: 10px calc(var(--padd-h) - var(--list-padd));
+  background: #fff;
+  border-radius: var(--ui-bdr);
+  border-bottom: 1px solid #aaa;
+  cursor: pointer;
+
+  &:hover {
+    background: #f4f5f7;
+  }
+}

@@ -1,0 +1,38 @@
+.board {
+  --padd-h: 15px;
+  --padd-v: 15px;
+  --list-padd: 8px;
+
+  background: linear-gradient(#0000003d, #0000 130px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px;
+}
+.lists_wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  flex-grow: 1;
+}
+.lists {
+  padding: 0 10px;
+  width: fit-content;
+  display: flex;
+  align-items: flex-start;
+}
+.list {
+  margin-right: 10px;
+  padding: var(--list-padd);
+}
+.add_btn {
+  padding: var(--padd-v) var(--padd-h);
+}
+.list,
+.add_btn {
+  min-width: 300px;
+}

@@ -1,0 +1,22 @@
+.list {
+  --card-padd-h: calc(var(--padd-h) - var(--list-padd));
+  background: #ebecf0;
+  border-radius: var(--ui-bdr);
+  color: #172b4d;
+}
+.title {
+  font-weight: bold;
+  padding: calc(var(--padd-v) - var(--list-padd)) calc(var(--padd-h) - var(--list-padd)) var(--padd-v);
+}
+.card {
+  margin-bottom: 7px;
+}
+.add_btn {
+  opacity: 0.67;
+  padding: 4px var(--card-padd-h);
+  width: 100%;
+
+  &:hover {
+    opacity: 1;
+  }
+}

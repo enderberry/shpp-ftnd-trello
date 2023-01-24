@@ -1,0 +1,30 @@
+@import 'reset.css';
+
+:root {
+  --theme: #127abd;
+  --ui-bdr: 3px;
+  --btn-bg-tsp: rgba(255, 255, 255, 0.2);
+  --btn-bg-tsp-hv: rgba(255, 255, 255, 0.3);
+  --btn-bg-tsp-cl: rgba(255, 255, 255, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--theme);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.x-bi-spr {
+  margin-right: 0.5ch;
+}

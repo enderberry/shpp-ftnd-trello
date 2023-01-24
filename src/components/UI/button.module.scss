@@ -1,0 +1,27 @@
+.btn {
+  border: none;
+  outline: none;
+  border-radius: var(--ui-bdr);
+  background: var(--c, #fff);
+  color: var(--tc, #000);
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    background: var(--chv, #eee);
+  }
+  &:active {
+    background: var(--ccl, #ddd);
+  }
+}
+.btn_smtsp {
+  --c: var(--btn-bg-tsp);
+  --chv: var(--btn-bg-tsp-hv);
+  --ccl: var(--btn-bg-tsp-cl);
+  --tc: #fff;
+}
+.btn_tsp {
+  --c: transparent;
+  --chv: rgba(9, 30, 66, 0.08);
+  --ccl: rgba(9, 30, 66, 0.13);
+}
