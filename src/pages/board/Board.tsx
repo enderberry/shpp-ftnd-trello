@@ -21,7 +21,30 @@ function Board(): ReactElement {
     {
       id: 2,
       title: 'В процессе',
-      cards: [{ id: 4, title: 'посмотреть сериал' }]
+      cards: [
+        { id: 1, title: 'посмотреть сериал' },
+        { id: 2, title: 'посмотреть сериал' },
+        { id: 3, title: 'посмотреть сериал' },
+        { id: 4, title: 'посмотреть сериал' },
+        { id: 5, title: 'посмотреть сериал' },
+        { id: 6, title: 'посмотреть сериал' },
+        { id: 7, title: 'посмотреть сериал' },
+        { id: 8, title: 'посмотреть сериал' },
+        { id: 9, title: 'посмотреть сериал' },
+        { id: 10, title: 'посмотреть сериал' },
+        { id: 11, title: 'посмотреть сериал' },
+        { id: 12, title: 'посмотреть сериал' },
+        { id: 13, title: 'посмотреть сериал' },
+        { id: 14, title: 'посмотреть сериал' },
+        { id: 15, title: 'посмотреть сериал' },
+        { id: 16, title: 'посмотреть сериал' },
+        { id: 17, title: 'посмотреть сериал' },
+        { id: 18, title: 'посмотреть сериал' },
+        { id: 19, title: 'посмотреть сериал' },
+        { id: 20, title: 'посмотреть сериал' },
+        { id: 21, title: 'посмотреть сериал' },
+        { id: 22, title: 'посмотреть сериал' }
+      ]
     },
     {
       id: 3,
@@ -75,16 +98,29 @@ function Board(): ReactElement {
 
   return (
     <div className={cls.board}>
-      <h1 className={cls.title}>{title}</h1>
-      <div className={cls.lists_wrapper}>
-        <div className={cls.lists}>
-          {lists.map((list) => (
-            <List title={list.title} cards={list.cards} className={cls.list} key={list.id} />
-          ))}
-          <div className={cls.add_btn_wrapper}>
-            <Button className={cls.add_btn} chClassName={['btn_smtsp']}>
-              <i className="bi bi-plus-lg x-bi-spr" /> Add another list
-            </Button>
+      <div className={cls.main}>
+        <div className={cls.header}>
+          <div>
+            <a href="/">
+              <Button className={cls.back_btn} chClassName={['btn_smtsp']}>
+                <i className="bi bi-house-door-fill x-bi-spr" /> Home
+              </Button>
+            </a>
+          </div>
+          <h1 className={cls.title}>{title}</h1>
+        </div>
+        <div className={cls.lists_wrapper}>
+          <div className={cls.lists}>
+            {lists.map((list) => (
+              <div className={cls.list_wrapper} key={list.id}>
+                <List title={list.title} cards={list.cards} className={cls.list} />
+              </div>
+            ))}
+            <div className={cls.add_btn_wrapper}>
+              <Button className={cls.add_list_btn} chClassName={['btn_smtsp']}>
+                <i className="bi bi-plus-lg x-bi-spr" /> Add another list
+              </Button>
+            </div>
           </div>
         </div>
       </div>

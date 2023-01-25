@@ -1,4 +1,8 @@
 .board {
+  --theme: var(--ctheme-blue);
+  background: var(--theme);
+}
+.main {
   --padd-h: 15px;
   --padd-v: 15px;
   --list-padd: 8px;
@@ -8,31 +12,43 @@
   display: flex;
   flex-direction: column;
 }
+.header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.back_btn {
+  padding: 5px 10px;
+  margin-right: 15px;
+}
 .title {
   color: #fff;
   font-size: 22px;
   font-weight: bold;
-  padding: 20px;
 }
 .lists_wrapper {
   overflow-x: scroll;
-  overflow-y: hidden;
   flex-grow: 1;
 }
 .lists {
-  padding: 0 10px;
+  padding: 0 10px 10px;
   width: fit-content;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
+  max-height: 100%;
+}
+.list_wrapper {
+  margin-right: 10px;
 }
 .list {
-  margin-right: 10px;
   padding: var(--list-padd);
+  max-height: 100%;
 }
-.add_btn {
+.add_list_btn {
   padding: var(--padd-v) var(--padd-h);
+  font-size: 16px;
 }
 .list,
-.add_btn {
+.add_list_btn {
   min-width: 300px;
 }

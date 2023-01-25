@@ -1,15 +1,29 @@
 @import 'reset.css';
 
 :root {
-  --theme: #127abd;
+  --theme: #fff;
   --ui-bdr: 3px;
   --btn-bg-tsp: rgba(255, 255, 255, 0.2);
   --btn-bg-tsp-hv: rgba(255, 255, 255, 0.3);
   --btn-bg-tsp-cl: rgba(255, 255, 255, 0.4);
+
+  --ctheme-blue: #127abd;
+  --ctheme-orange: #d18f3e;
+  --ctheme-green: #53973f;
+  --ctheme-red: #ae4736;
+  --ctheme-purple: #88629c;
+  --ctheme-pink: #cb5c91;
+  --ctheme-lime: #50be6e;
+  --ctheme-skyblue: #1caeca;
+  --ctheme-grey: #838c91;
 }
 
 * {
   box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 body {
@@ -18,7 +32,6 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--theme);
 }
 
 code {
@@ -27,4 +40,17 @@ code {
 
 .x-bi-spr {
   margin-right: 0.5ch;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+.section {
+  margin-top: 10px;
+}
+.heading {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #777;
 }

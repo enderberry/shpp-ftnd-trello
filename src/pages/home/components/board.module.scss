@@ -1,0 +1,10 @@
+.board {
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  background: var(--ctheme-grey);
+  &:hover {
+    filter: brightness(0.9);
+  }
+}

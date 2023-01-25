@@ -1,15 +1,26 @@
 .list {
   --card-padd-h: calc(var(--padd-h) - var(--list-padd));
+  --card-mg-v: 7px;
   background: #ebecf0;
   border-radius: var(--ui-bdr);
   color: #172b4d;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
 }
 .title {
   font-weight: bold;
   padding: calc(var(--padd-v) - var(--list-padd)) calc(var(--padd-h) - var(--list-padd)) var(--padd-v);
 }
-.card {
-  margin-bottom: 7px;
+.cards {
+  flex-grow: 1;
+  overflow: scroll;
+}
+.card:not(:last-child) {
+  margin-bottom: var(--card-mg-v);
+}
+.add_btn_wrapper {
+  padding-top: var(--card-mg-v);
 }
 .add_btn {
   opacity: 0.67;

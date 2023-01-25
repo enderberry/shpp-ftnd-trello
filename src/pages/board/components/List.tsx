@@ -16,15 +16,15 @@ function List({ title, cards, className }: ListProps): ReactElement {
   return (
     <div className={`${cls.list} ${className}`}>
       <h2 className={cls.title}>{title}</h2>
-      <div>
+      <div className={cls.cards}>
         {cards.map((card) => (
           <Card title={card.title} key={card.id} className={cls.card} />
         ))}
-        <div>
-          <Button className={cls.add_btn} chClassName={['btn_tsp']}>
-            <i className="bi bi-plus-lg x-bi-spr" /> Add a card
-          </Button>
-        </div>
+      </div>
+      <div className={cls.add_btn_wrapper}>
+        <Button className={cls.add_btn} chClassName={['btn_tsp']}>
+          <i className="bi bi-plus-lg x-bi-spr" /> Add a card
+        </Button>
       </div>
     </div>
   );

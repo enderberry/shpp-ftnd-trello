@@ -1,0 +1,21 @@
+.home {}
+.boards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+  gap: 20px;
+  font-size: 20px;
+}
+.board {
+  height: 100%;
+}
+.create-board button {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+}
+.create-board button > * {
+  transform: translateX(-0.25em);
+}

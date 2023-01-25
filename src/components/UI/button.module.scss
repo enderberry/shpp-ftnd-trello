@@ -2,16 +2,16 @@
   border: none;
   outline: none;
   border-radius: var(--ui-bdr);
-  background: var(--c, #fff);
+  background: var(--c, #0000);
   color: var(--tc, #000);
   display: inline-flex;
   align-items: center;
 
   &:hover {
-    background: var(--chv, #eee);
+    background: var(--chv, #00000009);
   }
   &:active {
-    background: var(--ccl, #ddd);
+    background: var(--ccl, #0001);
   }
 }
 .btn_smtsp {
