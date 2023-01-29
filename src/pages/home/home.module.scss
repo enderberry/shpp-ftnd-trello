@@ -1,4 +1,6 @@
-.home {}
+.home {
+  --ui-bdr: 6px;
+}
 .boards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

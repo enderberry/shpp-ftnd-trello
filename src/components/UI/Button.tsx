@@ -1,6 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
-import cls from './button.module.scss';
+
 import cssModuleClasses from '../../funcs/cssModuleClasses';
+import cls from './button.module.scss';
 
 interface ButtonProps {
   children?: ReactNode[] | ReactNode;

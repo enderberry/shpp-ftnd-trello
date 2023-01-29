@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
-import ICard from '../../../interfaces/ICard';
 
 import Card from './Card';
 import Button from '../../../components/UI/Button';
 
+import ICard from '../../../interfaces/ICard';
 import cls from './list.module.scss';
 
 interface ListProps {

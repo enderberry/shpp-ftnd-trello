@@ -50,13 +50,14 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-explicit-any": 0,
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member" : "off",
     "no-alert": "error",
     "eol-last": "error",
     "semi": "error",
     "no-console": "error",
+    "func-names": 0,
 
     "@typescript-eslint/no-unused-vars": 0
   },

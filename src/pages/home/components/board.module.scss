@@ -1,7 +1,7 @@
 .board {
   color: #fff;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: var(--ui-bdr);
   font-weight: bold;
   background: var(--ctheme-grey);
   &:hover {
