@@ -1,0 +1,40 @@
+.sandwich_input_wrapper {
+  position: relative;
+}
+.children {
+  position: relative;
+  z-index: 1;
+}
+.sandwich_input {
+  transform-origin: top;
+  transform: scaleY(0);
+  background: var(--sandwich-bga, #ebecf0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  border-radius: var(--ui-bdr);
+  transition-duration: 0.2s;
+  padding: 5px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+}
+.sandwich_input_wrapper.active .sandwich_input {
+  transform: scaleY(100%);
+}
+.input {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 6px 8px;
+}
+.btn {
+  padding: 7px 13px;
+}
+.submit_btn {
+  font-size: 16px;
+}
+.close_btn {
+  --c: #0000;
+  --chv: #0000;
+  --ccl: #0000;
+}

@@ -11,13 +11,13 @@
 .board {
   height: 100%;
 }
-.create-board button {
+.create_board button {
   width: 100%;
   height: 100%;
   justify-content: center;
   border: 1px solid #ccc;
   padding: 0 20px;
 }
-.create-board button > * {
+.create_board button > * {
   transform: translateX(-0.25em);
 }

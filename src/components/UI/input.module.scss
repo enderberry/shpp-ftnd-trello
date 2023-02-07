@@ -1,0 +1,18 @@
+.input {
+  border: var(--form-ui-bd);
+  padding: 4px 5px;
+  border-radius: var(--ui-bdr);
+  background: var(--form-ui-bg);
+  transition: 0.12s;
+
+  &:required:placeholder-shown {
+    border: var(--form-ui-bd-rq);
+  }
+  &:hover {
+    background: var(--form-ui-bg-hv);
+  }
+  &:focus {
+    border: var(--form-ui-bd-fc) !important;
+    background: #fff;
+  }
+}

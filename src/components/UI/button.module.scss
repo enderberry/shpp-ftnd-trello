@@ -6,6 +6,7 @@
   color: var(--tc, #000);
   display: inline-flex;
   align-items: center;
+  transition-duration: 0.1s;
 
   &:hover {
     background: var(--chv, #00000009);
@@ -13,6 +14,10 @@
   &:active {
     background: var(--ccl, #0001);
   }
+}
+.btn_block {
+  display: block;
+  width: 100%;
 }
 .btn_smtsp {
   --c: var(--btn-bg-tsp);
@@ -24,4 +29,10 @@
   --c: transparent;
   --chv: rgba(9, 30, 66, 0.08);
   --ccl: rgba(9, 30, 66, 0.13);
+}
+.btn_colored {
+  --c: #0079bf;
+  --chv: #026aa7;
+  --ccl: #055a8c;
+  --tc: #fff;
 }

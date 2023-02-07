@@ -59,7 +59,8 @@
     "no-console": "error",
     "func-names": 0,
 
-    "@typescript-eslint/no-unused-vars": 0
+    "@typescript-eslint/no-unused-vars": 0,
+    "no-eval": 0
   },
   "overrides": []
 }

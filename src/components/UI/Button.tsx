@@ -7,10 +7,15 @@ interface ButtonProps {
   children?: ReactNode[] | ReactNode;
   className?: string;
   chClassName?: string[];
+  [a: string]: any;
 }
 
-function Button({ children, className, chClassName }: ButtonProps): ReactElement {
-  return <button className={`${cls.btn} ${className} ${cssModuleClasses(cls, chClassName || [])}`}>{children}</button>;
+function Button({ children, className, chClassName, ...props }: ButtonProps): ReactElement {
+  return (
+    <button className={`${cls.btn} ${className} ${cssModuleClasses(cls, chClassName || [])}`} {...props}>
+      {children}
+    </button>
+  );
 }
 
 Button.defaultProps = {

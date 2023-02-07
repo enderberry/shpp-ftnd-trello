@@ -3,9 +3,16 @@
 :root {
   --theme: #fff;
   --ui-bdr: 3px;
+
   --btn-bg-tsp: rgba(255, 255, 255, 0.2);
   --btn-bg-tsp-hv: rgba(255, 255, 255, 0.3);
   --btn-bg-tsp-cl: rgba(255, 255, 255, 0.4);
+
+  --form-ui-bd: 2px solid #dfe1e6;
+  --form-ui-bd-fc: 2px solid #0079bf;
+  --form-ui-bd-rq: 2px solid #eb5a46;
+  --form-ui-bg: #fafbfc;
+  --form-ui-bg-hv: #ebecf0;
 
   --ctheme-blue: #127abd;
   --ctheme-orange: #d18f3e;
@@ -53,4 +60,14 @@ code {
   font-size: 30px;
   margin-bottom: 20px;
   color: #777;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.modal-item:not(:first-child) {
+  margin-top: 10px;
 }
