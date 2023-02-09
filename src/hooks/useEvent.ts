@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-type EvtCb = (a1?: any) => void | boolean;
+type EvtCb = (evt?: any) => void | boolean;
 
 interface IListener {
   target: Window | Document | HTMLElement;
@@ -15,7 +15,7 @@ export default function useEvent(
 ): void {
   const applyListenerMethod = (arr: IListener[], mth: string): void => {
     arr.forEach(({ target, eventName, callback }) => {
-      (target[mth as keyof typeof target] as (a1: string, a2: EvtCb) => void).call(target, eventName, callback);
+      (target[mth as keyof typeof target] as (name: string, cb: EvtCb) => void).call(target, eventName, callback);
     });
   };
 

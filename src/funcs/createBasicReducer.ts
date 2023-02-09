@@ -1,4 +1,4 @@
-type TActHnd<R> = (a1: R, a2?: any) => R;
+type TActHnd<R> = (state: R, payload?: any) => R;
 
 interface IAction {
   type: string;
@@ -9,10 +9,10 @@ export default function createBasicReducer<T>(
   initialState: T,
   callbacks: {
     def: TActHnd<T>;
-    before?: (a1: T, a2?: IAction) => { end?: boolean; state?: T; data: object };
+    before?: (state: T, payload?: IAction) => { end?: boolean; state?: T; data: object };
     actions?: { [a: string]: TActHnd<T> };
   }
-): (a1: T | undefined, a2: IAction) => T {
+): (state: T | undefined, action: IAction) => T {
   return function (state = initialState, action?: IAction) {
     let bData;
 

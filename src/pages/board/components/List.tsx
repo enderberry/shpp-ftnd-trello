@@ -12,8 +12,8 @@ interface ListProps {
   title: string;
   cards: ICard[];
   className?: string;
-  changeTitle?: (a1: string) => void;
-  addCard?: (a1: string) => void;
+  changeTitle?: (val: string) => void;
+  addCard?: (title: string) => void;
 }
 
 function List({ title, cards, className, changeTitle, addCard }: ListProps): ReactElement {

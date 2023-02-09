@@ -6,7 +6,7 @@ interface ModalProps {
   children?: ReactNode | ReactNode[];
   opened?: boolean;
   className?: string;
-  setOpened?: (a1: boolean) => void;
+  setOpened?: (opened: boolean) => void;
   [a: string]: any;
 }
 

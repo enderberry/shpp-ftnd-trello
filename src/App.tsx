@@ -1,6 +1,8 @@
 import React, { ReactElement, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import ErrorMsg from './components/ErrorMsg';
+
 import { routes } from './router';
 import dispatchCustomEvent from './funcs/dispatchCustomEvent';
 
@@ -16,13 +18,16 @@ function App(): ReactElement {
     return () => window.removeEventListener('keydown', callback);
   }, []);
   return (
-    <BrowserRouter>
-      <Routes>
-        {routes.map((route) => (
-          <Route path={route.path} element={<route.component />} key={route.path} />
-        ))}
-      </Routes>
-    </BrowserRouter>
+    <>
+      <ErrorMsg />
+      <BrowserRouter>
+        <Routes>
+          {routes.map((route) => (
+            <Route path={route.path} element={<route.component />} key={route.path} />
+          ))}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

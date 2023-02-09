@@ -13,7 +13,7 @@ interface SandwichInputProps {
   btnText?: string;
   inputHint?: string;
   opened?: boolean;
-  setOpened?: (a1: boolean) => void;
+  setOpened?: (opened: boolean) => void;
   onSubmit?: any;
 }
 

@@ -10,8 +10,8 @@ import cls from './add_board_form.module.scss';
 
 interface AddBoardFormState {
   opened: boolean;
-  setOpened: (a1: boolean) => void;
-  onCreate?: (a1: ICreateEvent) => void;
+  setOpened: (opened: boolean) => void;
+  onCreate?: (evt: ICreateEvent) => void;
 }
 
 function AddBoardForm({ opened, setOpened, onCreate }: AddBoardFormState): ReactElement {

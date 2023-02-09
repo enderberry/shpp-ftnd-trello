@@ -2,11 +2,13 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 
+import Loading from '../../components/Loading';
 import List from './components/List';
 import Button from '../../components/UI/Button';
 import ContentInput from '../../components/UI/ContentInput';
 import SandwichInput from '../../components/UI/SandwichInput';
 
+import useLoading from '../../hooks/useLoading';
 import { editBoard, fetchBoard, createList, editList, createCard, editCard } from '../../store/modules/board/actions';
 import { AppDispatch, RootState } from '../../store';
 import Identifier from '../../types/Identifier';
@@ -18,33 +20,37 @@ function Board(): ReactElement {
   const dispatch: AppDispatch = useDispatch();
   const [notFound, setNotFound] = useState(false);
   const [addListOpened, setAddListOpened] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const board = useSelector((state: RootState) => state.board.board);
   useEffect(() => {
-    dispatch(fetchBoard(boardId));
+    useLoading(async () => {
+      await dispatch(fetchBoard(boardId));
+    }, setLoading)();
   }, []);
 
-  const onAddList = (title: string): void => {
-    dispatch(createList(boardId, { title, position: board.lists.length }));
-  };
-  const onAddCard = (listId: Identifier, title: string): void => {
+  const onAddList = useLoading(async (title: string): Promise<void> => {
+    await dispatch(createList(boardId, { title, position: board.lists.length }));
+  }, setLoading);
+  const onAddCard = useLoading(async (listId: Identifier, title: string): Promise<void> => {
     const position = board.lists.find(({ id }) => id === listId)?.cards.length;
     if (position === undefined) throw new ReferenceError('List not found');
-    dispatch(createCard(boardId, listId, { title, position }));
-  };
-  const onBoardTitleChange = (value: string): void => {
-    dispatch(editBoard(boardId, { title: value }));
-  };
-  const onListTitleChange = (listId: Identifier, value: string): void => {
-    dispatch(editList(boardId, listId, { title: value }));
-  };
-  const onCardTitleChange = (listId: Identifier, cardId: Identifier, value: string): void => {
-    // Will be used soon...
-    dispatch(editCard(boardId, listId, cardId, { title: value }));
-  };
+    await dispatch(createCard(boardId, listId, { title, position }));
+  }, setLoading);
+  const onBoardTitleChange = useLoading(async (value: string): Promise<void> => {
+    await dispatch(editBoard(boardId, { title: value }));
+  }, setLoading);
+  const onListTitleChange = useLoading(async (listId: Identifier, value: string): Promise<void> => {
+    await dispatch(editList(boardId, listId, { title: value }));
+  }, setLoading);
+  const onCardTitleChange = useLoading(async (listId: Identifier, cardId: Identifier, value: string): Promise<void> => {
+    // Will be used soon (maybe)...
+    await dispatch(editCard(boardId, listId, cardId, { title: value }));
+  }, setLoading);
 
   return (
     <div className={cls.board}>
+      {loading && <Loading />}
       <div className={cls.main}>
         <div className={cls.header}>
           <div>
@@ -72,8 +78,8 @@ function Board(): ReactElement {
                   title={list.title}
                   cards={list.cards}
                   className={cls.list}
-                  changeTitle={(nt: string): void => onListTitleChange(list.id, nt)}
-                  addCard={(t: string): void => onAddCard(list.id, t)}
+                  changeTitle={(nt: string): Promise<void> => onListTitleChange(list.id, nt)}
+                  addCard={(t: string): Promise<void> => onAddCard(list.id, t)}
                 />
               </div>
             ))}

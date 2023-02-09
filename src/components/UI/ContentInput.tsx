@@ -10,7 +10,7 @@ interface ContentInputProps {
   genClassName?: string;
   textClassName?: string;
   inputClassName?: string;
-  onChange?: (a1: string) => void;
+  onChange?: (val: string) => void;
 }
 
 const evtBucket: IListener[] = [];
